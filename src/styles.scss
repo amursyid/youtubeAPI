@@ -1,0 +1,83 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import './assets/css/buttons.scss';
+@import "~@angular/material/prebuilt-themes/purple-green.css";
+
+
+
+body{
+    font-family: 'Roboto', 'Noto', sans-serif;
+    margin: 0px;
+    background: #e9ebee;
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+    background-color: transparent;
+}
+
+::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    background-color: rgba(#607d8b, .4);
+}
+
+.mat-tab-group {
+    z-index: 10 !important;
+}
+
+.mat-tab-header {
+    position: fixed;
+    z-index: 2;
+    border: 1px solid #dddfe2;
+    border-left-width: 0px;
+    border-right-width: 0px;
+}
+
+.mat-tab-label:first-child {
+    border-left: 1px solid #dddfe2;
+}
+
+.mat-tab-label {
+    border-right: 1px solid #dddfe2;
+    height: 40px !important;
+}
+
+.mat-tab-body {
+    margin: 10px !important;
+    z-index: 10 !important;
+}
+
+.mat-tab-body-wrapper {
+    background: #e9ebee !important;
+    border-width: 0px !important;
+
+    mat-tab-body {
+        border-width: 0px !important;
+    }
+}
+
+.mat-tab-label-content {
+    color: #983838;
+    font-weight: 600;
+}
+
+.mat-search_icon-search, .mat-search_icon-close {
+    font-size: 20.5px !important;
+    line-height: 1.4 !important;
+}
+
+mat-search-bar .mat-form-field-infix {
+    width: 250px;
+    font-size: 14px;
+    margin-top: 12px;
+}
+
+.mat-snack-bar-container {
+    color: #FFF !important;
+    background: #B71C1C !important;
+}

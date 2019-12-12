@@ -1,0 +1,34 @@
+<div class="youtube-container">
+    <video-player [embedHTML]="selectedVideo"></video-player>
+    <div class="row" *ngIf="(videos$ | async) as videos" [ngClass]="routeAnimationsElements">
+        <div *ngFor="let video of videos" class="col-md-3 col-lg-3">
+            <mat-card class="youtube-card">
+                <div class="video-container" [ngStyle]="{'background': '#000 url(' + video.snippet.thumbnails.medium.url + ') center center no-repeat', 'background-size': '125%', 'width':'100%'}">
+                    <div class="video-infos">
+                        <span class="left">
+                            <fa-icon class="with-margin-right" icon="thumbs-up"></fa-icon>
+                            {{ video.statistics.likeCount}}
+                        </span>
+                        <span class="center">
+                            <fa-icon class="with-margin-right" icon="eye"></fa-icon>
+                            {{ video.statistics.viewCount}}
+                        </span>
+                        <span class="right">
+                            <fa-icon class="with-margin-right" icon="clock"></fa-icon>
+                            {{ video.contentDetails.duration | duration}}
+                        </span>
+                    </div>
+                    <div class="video-name-block">
+                        <div class="video-title-info">
+                            {{ video.snippet.title}}
+                        </div>
+                    </div>
+                    <div class="video-play-button">
+                        <fa-icon class="with-margin-right" icon="play-circle" size="3x" [styles]="{'color': 'white'}" (click)="onPlayVideo(video.player.embedHtml)"></fa-icon>
+                    </div>
+                </div>
+            </mat-card>
+        </div>
+    </div>
+    <more-data-search-loader *ngIf="(loading$ | async)"></more-data-search-loader>
+</div>
